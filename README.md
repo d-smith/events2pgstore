@@ -2,6 +2,12 @@
 
 This project reads events from a subscribed queue and writes the event data to PG Event Store
 
+## Schema
+
+In a nutshell the events table from pgeventstore is used. A good set up is to use a separate schema
+and user to make sure you're not replicating your source into your source...
+
+<pre>
 create database esdbcopy;
 create user escopyusr with password 'uh-huh';
 
@@ -14,3 +20,4 @@ create table events (
 );
 
 grant select, insert on events to escopyusr;
+</pre>
