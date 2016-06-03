@@ -21,3 +21,15 @@ create table events (
 
 grant select, insert on events to escopyusr;
 </pre>
+
+## Build docker image
+
+<pre>
+docker build -t dasmith/e2pgs .
+</pre>
+
+## Run in container
+
+<pre>
+docker run -e QUEUE_URL=https://sqs.us-east-1.amazonaws.com/930295567417/juneq -e DB_HOST=eventstoredb -e DB_NAME=esdbcopy -e DB_PASSWORD=uh-huh -e DB_PORT=5432 -e DB_USER=escopyusr --link eventstoredb:postgres  dasmith/e2pgs
+</pre>
