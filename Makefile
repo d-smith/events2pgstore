@@ -1,5 +1,9 @@
 docker:
 	docker build -t dasmith/e2pgs .
+
+smalldocker:
+	docker build -f Dockerfile.tiny -t dasmith/tinye2pgs .
+
 compile:
 	GOOS=linux GOARCH=386 CGO_ENABLED=0 go build -o e2pgs .
 dependencies:

@@ -1,0 +1,5 @@
+FROM scratch
+ADD ca-certificates.crt /etc/ssl/certs/
+
+COPY e2pgs /opt/
+CMD ["/opt/e2pgs"]
