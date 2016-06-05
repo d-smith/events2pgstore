@@ -22,10 +22,26 @@ create table events (
 grant select, insert on events to escopyusr;
 </pre>
 
-## Build docker image
+## Dependencies
 
 <pre>
-docker build -t dasmith/e2pgs .
+make dependencies
+</pre>
+
+
+## Build docker image
+
+To build a Debian based image:
+
+<pre>
+make docker
+</pre>
+
+To build an image from scratch, first copy your ca-certificates.crt file into this directory - you can find it in
+/etc/ssl/certs/ in Ubuntu for example. Then:
+
+<pre>
+make smalldocker
 </pre>
 
 ## Run in container
