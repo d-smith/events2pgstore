@@ -1,7 +1,7 @@
-docker:
+docker: compile
 	docker build -t dasmith/e2pgs .
 
-smalldocker:
+smalldocker: compile
 	docker build -f Dockerfile.tiny -t dasmith/tinye2pgs .
 
 compile:
