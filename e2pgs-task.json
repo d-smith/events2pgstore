@@ -3,11 +3,15 @@
     "containerDefinitions": [
         {
             "name": "e2pgs", 
-            "image": "dasmith/tinye2pgs/", 
+            "image": "dasmith/tinye2pgs",
             "cpu": 10, 
             "memory": 512, 
             "essential": true, 
             "environment": [
+                {
+                    "name": "AWS_REGION",
+                    "value": "xxxx"
+                },
                 {
                     "name": "QUEUE_URL", 
                     "value": "xxxx"
