@@ -90,7 +90,12 @@ func main() {
 		WaitTimeSeconds:     aws.Int64(5),
 	}
 
-	svc := sqs.New(session.New(), &aws.Config{Region: aws.String("us-east-1")})
+	region := os.Getenv("AWS_REGION")
+	if region == "" {
+		region = "us-east-1"
+	}
+
+	svc := sqs.New(session.New(), &aws.Config{Region: aws.String(region)})
 	for {
 		log.Println("check messages...")
 		resp, err := svc.ReceiveMessage(params)
