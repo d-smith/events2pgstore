@@ -1,0 +1,38 @@
+{
+    "family": "e2pgs", 
+    "containerDefinitions": [
+        {
+            "name": "e2pgs", 
+            "image": "dasmith/tinye2pgs/", 
+            "cpu": 10, 
+            "memory": 512, 
+            "essential": true, 
+            "environment": [
+                {
+                    "name": "QUEUE_URL", 
+                    "value": "xxxx"
+                },
+                {
+                    "name": "DB_HOST", 
+                    "value": "xxxx"
+                },
+                {
+                    "name": "DB_NAME", 
+                    "value": "xxxx"
+                },
+                {
+                    "name": "DB_PASSWORD", 
+                    "value": "xxxx"
+                },
+                {
+                    "name": "DB_PORT", 
+                    "value": "xxxx"
+                },
+                {
+                    "name": "DB_USER", 
+                    "value": "xxxx"
+                }
+            ]           
+        }
+    ]
+}
