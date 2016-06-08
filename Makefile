@@ -13,4 +13,5 @@ dependencies:
 	go get -u github.com/nu7hatch/gouuid
 	go get -u github.com/xtraclabs/pgeventstore
 	go get -u github.com/xtraclabs/snspublish/db
+	go get github.com/hashicorp/consul/api
 
