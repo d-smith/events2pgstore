@@ -63,3 +63,12 @@ allowed CIDR/IP config for the RDS.
 A VPC design for the RDS will need a VPC with two subnets - one public, and one private. The public subnet is used to
 launch a bastion host that can be used to ssh into cluster instances, or can connect to the RSD for schema defs, etc. A
 gateway will be needed to allow the private subnet access to dockerhub to pull the task image.
+
+When launching the instance, you may specify the cluster the instance is
+affliated by adding the following script in as user data:
+
+<pre>
+#!/bin/bash
+echo ECS_CLUSTER=your_cluster_name >> /etc/ecs/ecs.config
+</pre>
+
